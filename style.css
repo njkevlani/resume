@@ -523,7 +523,7 @@ ul.courses li:hover {
   clear: both;
 }
 
-.display {
+.display_div {
   display: block;
   opacity: 1 !important;
 }
@@ -579,10 +579,10 @@ ul.courses li:hover {
     float: right;
     padding: .2em;
   }
-  .display {
+  .display_div {
     display: none;
   }
-  .display:not(.none) {
+  .display_div:not(.none) {
     display: block;
   }
 }
@@ -675,7 +675,7 @@ ul.courses li:hover {
   #profiles .item {
     padding: 0;
   }
-  .item.display {
+  .item.display_div {
     display: block;
     opacity: 1 !important;
   }
