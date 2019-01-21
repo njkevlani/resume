@@ -579,9 +579,6 @@ ul.courses li:hover {
     float: right;
     padding: .2em;
   }
-  .display_div {
-    display: none;
-  }
   .display_div:not(.none) {
     display: block;
   }
