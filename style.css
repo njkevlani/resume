@@ -231,9 +231,7 @@ section .location {
 
 #header>#profiles,
 #header>#contact,
-#skills,
-#languages,
-#interests {
+.single_line {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
