@@ -530,6 +530,9 @@ ul.courses li:hover {
   margin-bottom: .5rem;
 }
 
+.print-only {
+  visibility: hidden;
+}
 
 /****************
   *		TABLET
@@ -583,6 +586,9 @@ ul.courses li:hover {
 }
 
 @media print {
+  .print-only {
+    visibility: visible;
+  }  
   #resume {
     margin: 0;
     padding: 0;
