@@ -138,7 +138,7 @@ table {
 body,
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #40484f;
   font-weight: 400;
   letter-spacing: 0;
@@ -205,7 +205,7 @@ strong {
 
 #resume {
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 
@@ -556,7 +556,7 @@ ul.courses li:hover {
   }
   #resume {
     width: 820px;
-    margin: 2rem auto;
+    margin: 1rem auto;
   }
   .section>section>header .space-left {
     opacity: 1;
@@ -588,7 +588,7 @@ ul.courses li:hover {
 @media print {
   .print-only {
     visibility: visible;
-  }  
+  }
   #resume {
     margin: 0;
     padding: 0;
