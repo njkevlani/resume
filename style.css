@@ -279,7 +279,7 @@ section .location {
   margin: .15em 0 0;
 }
 
-h2.section-title {
+div.section-title {
   display: inline-block;
   background: #fff;
   padding: 0 1em 0.3em 0;
@@ -352,6 +352,11 @@ h2.section-title {
 .title,
 .language,
 .name {
+  font-weight: 600;
+}
+
+div.subHeader {
+  font-size: 1.27rem;
   font-weight: 600;
 }
 
