@@ -163,7 +163,7 @@ a:hover {
 }
 
 ul {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
 }
 
 li {
@@ -172,7 +172,7 @@ li {
   margin-left: 1.3em;
 }
 
-.highlights>li>p {
+.highlights>li {
   margin-bottom: 0.5em;
 }
 
@@ -231,7 +231,7 @@ section .location {
 
 #header>#profiles,
 #header>#contact,
-.single_line {
+.single-line {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -339,7 +339,6 @@ div.section-title {
 .institution,
 .date,
 .area,
-.studyType,
 .title,
 .awarder {
   display: inline;
@@ -347,7 +346,6 @@ div.section-title {
 
 .position,
 .project,
-.studyType,
 .area,
 .title,
 .language,
@@ -355,7 +353,7 @@ div.section-title {
   font-weight: 600;
 }
 
-div.subHeader {
+div.sub-header {
   font-size: 1.27rem;
   font-weight: 600;
 }
@@ -375,7 +373,7 @@ div.subHeader {
   font-weight: 400;
 }
 
-.section header .date {
+.date {
   font-size: 1rem;
   display: inline-table;
   padding: .1em 0;
@@ -526,12 +524,12 @@ ul.courses li:hover {
   clear: both;
 }
 
-.display_div {
+.display-div {
   display: block;
   opacity: 1 !important;
 }
 
-.needMargin {
+.need-margin {
   margin-bottom: .5rem;
 }
 
@@ -581,11 +579,11 @@ ul.courses li:hover {
     width: 70%;
     word-break: normal;
   }
-  .section header .date {
+  .date {
     float: right;
     padding: .2em;
   }
-  .display_div:not(.none) {
+  .display-div:not(.none) {
     display: block;
   }
 }
@@ -594,6 +592,16 @@ ul.courses li:hover {
   .print-only {
     visibility: visible;
   }
+  body,
+  html {
+    font-size: 13px;
+  }
+  .date::before,
+  .gpa::before {
+    content: "| ";
+    font-weight: 100;
+  }
+
   #resume {
     margin: 0;
     padding: 0;
@@ -627,7 +635,7 @@ ul.courses li:hover {
   .stack-overflow::after {
     content: "";
   }
-  .fa.social {
+  .social {
     color: #828386;
   }
   ul {
@@ -681,7 +689,7 @@ ul.courses li:hover {
   #profiles .item {
     padding: 0;
   }
-  .item.display_div {
+  .item.display-div {
     display: block;
     opacity: 1 !important;
   }
@@ -691,4 +699,11 @@ a.link>i {
 }
 a.link:hover>i {
   display: inline;
+}
+
+.education-item,
+.work-item,
+.open-source-contribution-item {
+  display: block;
+  margin-bottom: 1.3em;
 }
