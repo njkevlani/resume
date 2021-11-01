@@ -17,3 +17,5 @@ Suggestions:
 - Add technology in company tasks
 - Remove description from OSS
 - Add more detail in project section (Do it only if I add recent projects)
+
+Think about pdf/index2.html. Only issue is: When pressing Ctrl + S, browser saves index.html file instead of pdf file. Might be fixable with a bit of JS.

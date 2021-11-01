@@ -1,5 +1,21 @@
-<!DOCTYPE html>
-<head>
-<meta HTTP-EQUIV="refresh" content="0; url=Nilesh_Kevlani.pdf">
-</head>
+<!doctype html>
+<html>
+  <body style='height: 100%; width: 100%; overflow: hidden; margin:0px; background-color: rgb(82, 86, 89);'>
+    <embed style='position:absolute; left: 0; top: 0;'width='100%' height='100%' src='Nilesh_Kevlani.pdf' type='application/pdf'>
+    <a id='download-anchor' href='Nilesh_Kevlani.pdf' style='display: none;' download='Nilesh_Kevlani.pdf'>
+  </body>
 
+  <script>
+    window.addEventListener('keydown', function(event) {
+      if (event.ctrlKey || event.metaKey) {
+        switch (String.fromCharCode(event.which).toLowerCase()) {
+        case 's':
+          event.preventDefault();
+          let el = document.getElementById('download-anchor');
+          el.click();
+          break;
+        }
+      }
+    });
+  </script>
+</html>
