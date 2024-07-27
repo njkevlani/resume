@@ -1,0 +1,111 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Nilesh Kevlani</title>
+    </head>
+
+    <body>
+        <div id="resume">
+            <!-- Name section - Name, title, location, links -->
+            <div id="name-section">
+                <div id="name">{{.Name}}</div>
+                <div id="title">{{.Title}}</div>
+                <div id="location">{{.Location}}</div>
+                <div id="links">
+                    <ol>
+                        {{range $link := .Links}}
+                        <li>
+                            <a href="{{$link.HREF}}">{{$link.Content}}</a>
+                        </li>
+                        {{end}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills section -->
+        <div id="skills-section">
+            <ol>
+                {{range $skil := .Skills}}
+                <li>{{$skil.Content}}</li>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Work Experience section -->
+        <div id="work-experience-section">
+            <ol>
+                {{range $workExperience := .WorkExperiences}}
+                <li>
+                    <div>{{$workExperience.Company}}</div>
+                    {{range $role := $workExperience.Roles}}
+                    <div>{{$role.Title}}</div>
+                    <div>{{$role.Duration}}</div>
+                    {{end}}
+
+                    <ol>
+                        {{range $description := $workExperience.Description}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ol>
+                </li>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Education section -->
+        <div id="education-section">
+            <ol>
+                {{range $educationItem := .EducationItems}}
+                <li>
+                    <div>{{$educationItem.Course}}</div>
+                    <div>{{$educationItem.Institute}}</div>
+                    <div>{{$educationItem.Location}}</div>
+                    <div>{{$educationItem.Score}}</div>
+                    <div>{{$educationItem.Duration}}</div>
+                </li>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Open Source Software Contributions section -->
+        <div id="oss-contriution-section">
+            <ol>
+                {{range $ossContribution := .OOSContributions}}
+                <li>{{.}}</li>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Awards section -->
+        <div id="awards-section">
+            <ol>
+                {{range $award := .Awards}}
+                <div>{{.Title}}</div>
+                <div>{{.Institute}}</div>
+                <div>{{.Time}}</div>
+                <div>{{.Details}}</div>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Languages section -->
+        <div id="languages-section">
+            <ol>
+                {{range $language := .Languages}}
+                <li>{{$language.Content}}</li>
+                {{end}}
+            </ol>
+        </div>
+
+        <!-- Interests section -->
+        <div id="interests-section">
+            <ol>
+                {{range $intrest := .Interests}}
+                <li>{{.}}</li>
+                {{end}}
+            </ol>
+        </div>
+    </body>
+</html>
