@@ -61,6 +61,7 @@ type Award struct {
 
 func main() {
 	if len(os.Args) == 2 && os.Args[1] == "server" {
+		http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) { http.ServeFile(w, r, "style.css") })
 		http.HandleFunc("/", RenderResumeHandler)
 		http.ListenAndServe(":8080", nil)
 	} else {
