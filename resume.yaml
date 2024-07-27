@@ -1,0 +1,73 @@
+name: Nilesh Kevlani
+title: Software Engineer
+location: Bangalore, India
+links:
+  - icon_location: ""
+    content: njkevlani.dev
+    href: https://njkevlani.dev
+  - icon_location: ""
+    content: njkevlani@gmail.com
+    href: mailto://njkevlani@gmail.com
+skills:
+  - content: algorithms
+    score: 8
+  - content: protobuf
+    score: 9
+work_experiences:
+  - company: ShareChat
+    roles:
+      - title: Software Devlopment Engineer 3
+        duration: 2024 March - Present
+      - title: Software Devlopment Engineer 2
+        duration: September 2021 - 2024 March
+    description:
+      - Played primary role in developing end-to-end systems for data warehousing and streaming use cases.
+      - Played primary role in planning, developing toolding and moving data from JSON to Protobuf format.
+  - company: Razorpay
+    roles:
+      - title: Software Devlopment Engineer
+        duration: June 2020 - September
+    description:
+      - lorem
+      - ipsum
+education_items:
+  - course: BE Computer Engineering
+    institute: BVM Engineering College
+    location: Anand
+    score: 8.27 CGPA
+    duration: 2014 - 2018
+  - course: HSE
+    institute: BM Commerse High School
+    location: Bhavnagar
+    score: 84.66 %
+    duration: 2012 - 2014
+  - course: SSC
+    institute: Vishudhanand Vidya Mandir
+    location: Bhavnagar
+    score: 85.66 %
+    duration: 2010 - 2012
+oos_contributions:
+  - <a href="https://github.com/njkevlani/hst">hst</a> - A simple <a href="https://gohugo.io">hugo</a> theme.
+awards:
+  - title: Smart India Hackathon
+    institute: Governmemt Of India
+    time: March 2018
+    details: Participated in the final round of SIH 2018.
+  - title: Best Final Year Project
+    institute: BVM Engineering College
+    time: November 2017
+    details: Selected as the best project among 30 projects at the college level.
+languages:
+  - content: English
+    score: 8
+  - content: Hindi
+    score: 8
+  - content: Gujarati
+    score: 8
+  - content: Sindhi
+    score: 6
+interests:
+  - Travelling
+  - Badminton
+  - Swimming
+  - Listening to Music

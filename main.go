@@ -6,57 +6,50 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"gopkg.in/yaml.v3"
 )
 
 type Resume struct {
-	Name             string
-	Title            string
-	Location         string
-	Links            []Link
-	Skills           []ScoredContent
-	WorkExperiences  []WorkExperience
-	EducationItems   []EducationItem
-	OOSContributions []template.HTML
-	Awards           []Award
-	Languages        []ScoredContent
-	Interests        []string
-}
-
-type Link struct {
-	IconLocation string
-	Content      string
-	HREF         string
-}
-
-type ScoredContent struct {
-	Content string
-	Score   int
-}
-
-type WorkExperience struct {
-	Company     string
-	Roles       []Role
-	Description []string
-}
-
-type Role struct {
-	Title    string
-	Duration string
-}
-
-type EducationItem struct {
-	Course    string
-	Institute string
-	Location  string
-	Score     string
-	Duration  string
-}
-
-type Award struct {
-	Title     string
-	Institute string
-	Time      string
-	Details   string
+	Name     string `yaml:"name"`
+	Title    string `yaml:"title"`
+	Location string `yaml:"location"`
+	Links    []struct {
+		IconLocation string `yaml:"icon_location"`
+		Content      string `yaml:"content"`
+		HREF         string `yaml:"href"`
+	} `yaml:"links"`
+	Skills []struct {
+		Content string `yaml:"content"`
+		Score   int    `yaml:"score"`
+	} `yaml:"skills"`
+	WorkExperiences []struct {
+		Company string `yaml:"company"`
+		Roles   []struct {
+			Title    string `yaml:"title"`
+			Duration string `yaml:"duration"`
+		} `yaml:"roles"`
+		Description []string `yaml:"description"`
+	} `yaml:"work_experiences"`
+	EducationItems []struct {
+		Course    string `yaml:"course"`
+		Institute string `yaml:"institute"`
+		Location  string `yaml:"location"`
+		Score     string `yaml:"score"`
+		Duration  string `yaml:"duration"`
+	} `yaml:"education_items"`
+	OOSContributions []template.HTML `yaml:"oos_contributions"`
+	Awards           []struct {
+		Title     string `yaml:"title"`
+		Institute string `yaml:"institute"`
+		Time      string `yaml:"time"`
+		Details   string `yaml:"details"`
+	} `yaml:"awards"`
+	Languages []struct {
+		Content string `yaml:"content"`
+		Score   int    `yaml:"score"`
+	} `yaml:"languages"`
+	Interests []string `yaml:"interests"`
 }
 
 func main() {
@@ -68,6 +61,7 @@ func main() {
 		if f, err := os.Create("index.html"); err != nil {
 			log.Panic(err)
 		} else {
+			defer f.Close()
 			renderResume(f)
 		}
 	}
@@ -81,84 +75,14 @@ func RenderResumeHandler(w http.ResponseWriter, r *http.Request) {
 
 func renderResume(w io.Writer) error {
 	resumeTemplPath := "index.html.tmpl"
-	resume := Resume{
-		Name:     "Nilesh Kevlani",
-		Title:    "Software Engineer",
-		Location: "Bangalore, India",
-		Links: []Link{
-			{IconLocation: "", Content: "njkevlani.dev", HREF: "https://njkevlani.dev"},
-			{IconLocation: "", Content: "njkevlani@gmail.com", HREF: "mailto://njkevlani@gmail.com"},
-		},
-		Skills: []ScoredContent{
-			{Content: "algorithms", Score: 8},
-			{Content: "protobuf", Score: 9},
-		},
-		WorkExperiences: []WorkExperience{
-			{
-				Company: "ShareChat",
-				Roles: []Role{
-					{Title: "Software Devlopment Engineer 3", Duration: "2024 March - Present"},
-					{Title: "Software Devlopment Engineer 2", Duration: "September 2021 - 2024 March"},
-				},
-				Description: []string{
-					"Played primary role in developing end-to-end systems for data warehousing and streaming use cases.",
-					"Played primary role in planning, developing toolding and moving data from JSON to Protobuf format.",
-				},
-			},
-			{
-				Company: "Razorpay",
-				Roles: []Role{
-					{Title: "Software Devlopment Engineer", Duration: "June 2020 - September"},
-				},
-				Description: []string{
-					"lorem",
-					"ipsum",
-				},
-			},
-		},
-		EducationItems: []EducationItem{
-			{
-				Course:    "BE Computer Engineering",
-				Institute: "BVM Engineering College",
-				Location:  "Anand",
-				Score:     "8.27 CGPA",
-				Duration:  "2014 - 2018",
-			},
-			{
-				Course:    "HSE",
-				Institute: "BM Commerse High School",
-				Location:  "Bhavnagar",
-				Score:     "84.66 %",
-				Duration:  "2012 - 2014",
-			},
-			{
-				Course:    "SSC",
-				Institute: "Vishudhanand Vidya Mandir",
-				Location:  "Bhavnagar",
-				Score:     "85.66 %",
-				Duration:  "2010 - 2012",
-			},
-		},
-		OOSContributions: []template.HTML{
-			template.HTML("<a href=\"https://github.com/njkevlani/hst\">hst</a> - A simple <a href=\"https://gohugo.io\">hugo</a> theme"),
-		},
-		Awards: []Award{
-			{Title: "Smart India Hackathon", Institute: "Governmemt Of India", Time: "March 2018", Details: "Participated in the final round of SIH 2018."},
-			{Title: "Best Final Year Project", Institute: "BVM Engineering College", Time: "November 2017", Details: "Selected as the best project among 30 projects at the college level."},
-		},
-		Languages: []ScoredContent{
-			{Content: "English", Score: 8},
-			{Content: "Hindi", Score: 8},
-			{Content: "Gujarati", Score: 8},
-			{Content: "Sindhi", Score: 6},
-		},
-		Interests: []string{
-			"Travelling",
-			"Badminton",
-			"Swimming",
-			"Listening to Music",
-		},
+
+	resumeYAMLContent, err := os.ReadFile("resume.yaml")
+	if err != nil {
+		return err
 	}
+
+	resume := Resume{}
+	yaml.Unmarshal(resumeYAMLContent, &resume)
 
 	tmpl, err := template.ParseFiles(resumeTemplPath)
 	if err != nil {
