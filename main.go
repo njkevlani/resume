@@ -54,8 +54,8 @@ type Resume struct {
 
 func main() {
 	if len(os.Args) == 2 && os.Args[1] == "server" {
-		http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) { http.ServeFile(w, r, "style.css") })
-		http.HandleFunc("/", RenderResumeHandler)
+		http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
+		http.HandleFunc("/", renderResumeHandler)
 		http.ListenAndServe(":8080", nil)
 	} else {
 		if f, err := os.Create("index.html"); err != nil {
@@ -67,7 +67,7 @@ func main() {
 	}
 }
 
-func RenderResumeHandler(w http.ResponseWriter, r *http.Request) {
+func renderResumeHandler(w http.ResponseWriter, r *http.Request) {
 	if err := renderResume(w); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
