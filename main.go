@@ -39,13 +39,7 @@ type Resume struct {
 		Duration  string `yaml:"duration"`
 	} `yaml:"education_items"`
 	OOSContributions []template.HTML `yaml:"oos_contributions"`
-	Awards           []struct {
-		Title     string `yaml:"title"`
-		Institute string `yaml:"institute"`
-		Time      string `yaml:"time"`
-		Details   string `yaml:"details"`
-	} `yaml:"awards"`
-	Languages []struct {
+	Languages        []struct {
 		Content string `yaml:"content"`
 		Score   int    `yaml:"score"`
 	} `yaml:"languages"`

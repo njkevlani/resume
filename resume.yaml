@@ -2,34 +2,74 @@ name: Nilesh Kevlani
 title: Software Engineer
 location: Bangalore, India
 links:
-  - icon_location: ""
+  - icon_location: "assets/icons/external-link.svg"
     content: njkevlani.dev
     href: https://njkevlani.dev
-  - icon_location: ""
+  - icon_location: "assets/icons/email.svg"
     content: njkevlani@gmail.com
     href: mailto://njkevlani@gmail.com
 skills:
-  - content: algorithms
+  - content: system-design
+    score: 8
+  - content: backend
+    score: 9
+  - content: golang
+    score: 8
+  - content: java
+    score: 8
+  - content: scala
+    score: 7
+  - content: bash
+    score: 7
+  - content: linux
     score: 8
   - content: protobuf
     score: 9
+  - content: kafka
+    score: 8
+  - content: spark
+    score: 7
+  - content: gcp
+    score: 8
+  - content: databricks
+    score: 7
+  - content: github-actions
+    score: 8
+  - content: jenkins
+    score: 8
+  - content: docker
+    score: 8
+  - content: kubernetes
+    score: 8
 work_experiences:
   - company: ShareChat
     roles:
-      - title: Software Devlopment Engineer 3
-        duration: 2024 March - Present
-      - title: Software Devlopment Engineer 2
-        duration: September 2021 - 2024 March
+      - title: Software Devlopment Engineer - 3
+        duration: March 2024 - Present
+      - title: Software Devlopment Engineer - 2
+        duration: September 2021 - March 2024
     description:
-      - Played primary role in developing end-to-end systems for data warehousing and streaming use cases.
+      - Played primary role in developing end-to-end protobuf based systems for data warehousing and streaming use cases.
       - Played primary role in planning, developing toolding and moving data from JSON to Protobuf format.
+      - Ideated and implemented multiple solutions which greately improved user experience for data-platform users.
+      - Played important role in rewamping data-platform services which included rewriting services in more efficient languages, replacing costlier components with cost-efficient components, architectural changes, etc.
   - company: Razorpay
     roles:
       - title: Software Devlopment Engineer
-        duration: June 2020 - September
+        duration: June 2020 - September 2021
     description:
-      - lorem
-      - ipsum
+      - Was part of Transaction Risk Team.
+      - Worked on external vender integrations, customer integrations and features requirements.
+      - Worked on systems serving end-customer, merchants, ops team & other backend systems.
+  - company: TalentXO (Formally CrewKarma)
+    roles:
+      - title: Software Engineer
+        duration: September 2018 - June 2020
+    description:
+      - Worked on entire backend system for the org.
+      - Developed Recommendation Engine that matches Jobs with Candidate and vice versa.
+      - Developed Email Scheduler.
+      - Integrated Payment Gateway to Monetize the Platform.
 education_items:
   - course: BE Computer Engineering
     institute: BVM Engineering College
@@ -47,16 +87,14 @@ education_items:
     score: 85.66 %
     duration: 2010 - 2012
 oos_contributions:
-  - <a href="https://github.com/njkevlani/hst">hst</a> - A simple <a href="https://gohugo.io">hugo</a> theme.
-awards:
-  - title: Smart India Hackathon
-    institute: Governmemt Of India
-    time: March 2018
-    details: Participated in the final round of SIH 2018.
-  - title: Best Final Year Project
-    institute: BVM Engineering College
-    time: November 2017
-    details: Selected as the best project among 30 projects at the college level.
+  - <a target="_blank" href="https://github.com/njkevlani/hst">hst</a> - A simple <a target="_blank" href="https://gohugo.io">hugo</a> theme.
+  - <a target="_blank" href="https://github.com/njkevlani/driveload">Driveload</a> - A GitHub action that downloads file from the Internet and uploads it to Google Drive.
+  - <a target="_blank" href="https://github.com/njkevlani/tabbit">Tabbit</a> - A simple reddit web client with vim like keybindings.
+  - <a target="_blank" href="https://github.com/scikit-learn/scikit-learn/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://scikit-learn.org/">scikit-learn</a>.
+  - <a target="_blank" href="https://github.com/microsoft/vscode/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://code.visualstudio.com/">Visual Studio Code</a>.
+  - <a target="_blank" href="https://github.com/mattermost/mmctl/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://mattermost.com/">Mattermost</a> CLI.
+  - <a target="_blank" href="https://gitlab.com/gitlab-org/gitaly/-/merge_requests?scope=all&state=all&author_username=njkevlani">Contibutions</a> in <a href="https://gitlab.com/">GitLab</a>'s Gitaly.
+  - <a target="_blank" href="https://github.com/shanalikhan/code-settings-sync/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Code Settings Sync</a> Plugin.
 languages:
   - content: English
     score: 8
@@ -65,7 +103,7 @@ languages:
   - content: Gujarati
     score: 8
   - content: Sindhi
-    score: 6
+    score: 7
 interests:
   - Travelling
   - Badminton
