@@ -49,8 +49,8 @@ work_experiences:
       - title: Software Devlopment Engineer - 2
         duration: September 2021 - March 2024
     description:
-      - Played primary role in developing end-to-end protobuf based systems for data warehousing and streaming use cases.
-      - Played primary role in planning, developing toolding and moving data from JSON to Protobuf format.
+      - Played primary role in developing end-to-end protobuf based data-platform for warehousing and streaming use cases.
+      - Played primary role in planning, developing tooling and moving data from JSON to Protobuf format.
       - Ideated and implemented multiple solutions which greately improved user experience for data-platform users.
       - Played important role in rewamping data-platform services which included rewriting services in more efficient languages, replacing costlier components with cost-efficient components, architectural changes, etc.
   - company: Razorpay
