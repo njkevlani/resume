@@ -5,7 +5,7 @@ build-html:
 	go run main.go
 
 build-pdf:
-	html2pdf index.html -o Nilesh_Kevlani.pdf
+	html2pdf --background --paper A4 index.html -o Nilesh_Kevlani.pdf
 
 build-dir: build-html build-pdf
 	mkdir build/pdf -p
