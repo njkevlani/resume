@@ -4,7 +4,7 @@
 
 ```shell
 # Just rendering
-go run main.go
+just clean build-dir
 
 # Running server
 go run main.go server
