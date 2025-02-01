@@ -11,4 +11,4 @@ go run main.go server
 ```
 
 ## Before release
-- [ ] Make sure A4 print looks good
+- [ ] file structre. can I merge assests and static dir? putting less files in the root dir.
