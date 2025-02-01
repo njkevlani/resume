@@ -7,7 +7,16 @@ links:
     href: https://njkevlani.dev
   - icon_location: "assets/icons/email.svg"
     content: njkevlani@gmail.com
-    href: mailto://njkevlani@gmail.com
+    href: mailto:njkevlani@gmail.com
+  - icon_location: "assets/icons/github.svg"
+    content: GitHub
+    href: https://github.com/njkevlani
+  - icon_location: "assets/icons/stackoverflow.svg"
+    content: StackOverflow
+    href: https://stackoverflow.com/users/6645446/nilesh-kevlani
+  - icon_location: "assets/icons/linkedin.svg"
+    content: LinkedIn
+    href: https://linkedin.com/in/njkevlani
 skills:
   - content: system-design
     score: 8
