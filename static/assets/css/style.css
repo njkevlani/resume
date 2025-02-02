@@ -1,0 +1,170 @@
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #40484f;
+}
+
+#resume {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#name {
+    font-weight: 100;
+    font-size: 2.8rem;
+}
+
+#title {
+    font-size: 1.8rem;
+}
+
+#location {
+    margin-top: 2px;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    width: 100%;
+    border-bottom: 1px solid #aeb6bd;
+    line-height: 0.1em;
+    margin: 30px 0 20px;
+}
+
+.section-title > span {
+    color: #ff6d1f;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 5px 0 0;
+}
+
+span.svg-icon > img {
+    height: 1rem;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+span.svg-icon {
+    vertical-align: middle;
+}
+
+ol.tags {
+    margin: 0;
+    padding: 0;
+}
+
+ol.tags > li {
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    padding: 5px 5px 5px;
+    color: #3e6d8e;
+    background-color: #dfeaf1;
+    border: 0 solid #dfeaf1;
+    border-radius: 3px;
+}
+
+a {
+    color: #0095ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0c65a5;
+    text-decoration: underline;
+}
+
+ol.links {
+    margin: 0;
+    padding: 0;
+}
+
+ol.links li {
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    padding: 4px 5px 5px;
+}
+
+.company-name {
+    font-weight: 800;
+    font-size: 1.3em;
+    color: #1a1d20;
+}
+
+.company-details:not(:first-child) {
+    margin-top: 1em;
+}
+
+.education-details:not(:first-child) {
+    margin-top: 0.5em;
+}
+
+.oss-details:not(:first-child) {
+    margin-top: 0.3em;
+}
+
+ul.work-description {
+    list-style: square;
+}
+
+ul.work-description > li {
+    margin-top: 0.3em;
+}
+
+.rfloat {
+    float: right;
+}
+
+.role {
+    font-weight: bolder;
+    margin-top: 0.2em;
+}
+
+.section-content {
+    padding-left: 1em;
+}
+
+ol#work-experience-list,
+ol#education-list,
+ol#award-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.institute-name:before,
+.award-institute:before {
+    content: "| ";
+}
+
+.course-name {
+    font-weight: bolder;
+}
+
+.font-bolder {
+    font-weight: bolder;
+}
+
+@media print {
+  #resume {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  @page {
+    margin: 1cm 1.4cm;
+  }
+}
+
+/* For smaller */
+@media (width <= 900px) {
+    #resume {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* For mobile screens */
+@media (width <= 900px) {
+    .rfloat {
+        float: none;
+    }
+}
