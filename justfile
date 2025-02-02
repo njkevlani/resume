@@ -5,12 +5,12 @@ build-html:
 	go run main.go
 
 build-pdf:
-	html2pdf --background --paper A4 index.html -o Nilesh_Kevlani.pdf
+	html2pdf --background --paper A4 build/index.html -o Nilesh_Kevlani.pdf
+	mv Nilesh_Kevlani.pdf build/pdf/
 
-build-dir: build-html build-pdf
+build-dir: build-html && build-pdf
 	mkdir build/pdf -p
 	mv index.html build/
-	mv Nilesh_Kevlani.pdf build/pdf/
 	cp -r static/* build/
 
 server: build-dir
