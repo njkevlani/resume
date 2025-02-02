@@ -4,7 +4,6 @@ import (
 	"html/template"
 	"io"
 	"log"
-	"net/http"
 	"os"
 
 	"gopkg.in/yaml.v3"
@@ -47,23 +46,11 @@ type Resume struct {
 }
 
 func main() {
-	if len(os.Args) == 2 && os.Args[1] == "server" {
-		http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
-		http.HandleFunc("/", renderResumeHandler)
-		http.ListenAndServe(":8080", nil)
+	if f, err := os.Create("index.html"); err != nil {
+		log.Panic(err)
 	} else {
-		if f, err := os.Create("index.html"); err != nil {
-			log.Panic(err)
-		} else {
-			defer f.Close()
-			renderResume(f)
-		}
-	}
-}
-
-func renderResumeHandler(w http.ResponseWriter, r *http.Request) {
-	if err := renderResume(w); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		defer f.Close()
+		renderResume(f)
 	}
 }
 
@@ -76,7 +63,9 @@ func renderResume(w io.Writer) error {
 	}
 
 	resume := Resume{}
-	yaml.Unmarshal(resumeYAMLContent, &resume)
+	if err := yaml.Unmarshal(resumeYAMLContent, &resume); err != nil {
+		return err
+	}
 
 	tmpl, err := template.ParseFiles(resumeTemplPath)
 	if err != nil {

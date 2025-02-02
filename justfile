@@ -15,3 +15,5 @@ build-dir: build-html build-pdf
 	cp -r assets build/
 	cp -r static/* build/
 
+server: build-dir
+	python -m http.server --directory build
