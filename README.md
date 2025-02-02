@@ -10,5 +10,7 @@ just clean build-dir
 just server
 ```
 
-## Before release
-- [ ] file structre. can I merge assests and static dir? putting less files in the root dir.
+## TODOs
+- [ ] spell check, formatting, linting setup - local and github actions.
+- [ ] minify generated html
+- [ ] Adding tags in different places, like `golang` in project descriptions where `go` was used.
