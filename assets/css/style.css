@@ -153,3 +153,18 @@ ol#award-list {
     margin: 1cm 1.4cm;
   }
 }
+
+/* For smaller */
+@media (width <= 900px) {
+    #resume {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* For mobile screens */
+@media (width <= 900px) {
+    .rfloat {
+        float: none;
+    }
+}
