@@ -14,3 +14,8 @@ server: build
 
 check-typo:
 	typos
+
+check-lint:
+	golangci-lint run
+
+check: check-typo check-lint

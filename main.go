@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 	"log"
@@ -46,34 +47,42 @@ type Resume struct {
 }
 
 func main() {
-	if f, err := os.Create("index.html"); err != nil {
+	var (
+		outputFile *os.File
+		err        error
+	)
+
+	if outputFile, err = os.Create("index.html"); err != nil {
 		log.Panic(err)
-	} else {
-		defer f.Close()
-		renderResume(f)
+	}
+
+	defer outputFile.Close()
+
+	if err := renderResume(outputFile); err != nil {
+		log.Panic(err)
 	}
 }
 
-func renderResume(w io.Writer) error {
+func renderResume(output io.Writer) error {
 	resumeTemplPath := "index.html.tmpl"
 
 	resumeYAMLContent, err := os.ReadFile("resume.yaml")
 	if err != nil {
-		return err
+		return fmt.Errorf("resume.yaml reading err: %w", err)
 	}
 
-	resume := Resume{}
+	var resume Resume
 	if err := yaml.Unmarshal(resumeYAMLContent, &resume); err != nil {
-		return err
+		return fmt.Errorf("resume.yaml parsing err: %w", err)
 	}
 
 	tmpl, err := template.ParseFiles(resumeTemplPath)
 	if err != nil {
-		return err
+		return fmt.Errorf("template parsing err: %w", err)
 	}
 
-	if err := tmpl.Execute(w, resume); err != nil {
-		return err
+	if err := tmpl.Execute(output, resume); err != nil {
+		return fmt.Errorf("output writing err: %w", err)
 	}
 
 	return nil
