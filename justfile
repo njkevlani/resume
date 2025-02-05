@@ -15,3 +15,6 @@ build-dir: build-html && build-pdf
 
 server: build-dir
 	python -m http.server --directory build
+
+check-typo:
+	typos
