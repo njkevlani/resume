@@ -3,11 +3,8 @@
 ## Running locally
 
 ```shell
-# Just rendering
-just clean build-dir
-
 # Running server
-just server
+just clean server
 ```
 
 ## TODOs
