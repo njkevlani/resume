@@ -53,9 +53,9 @@ skills:
 work_experiences:
   - company: ShareChat
     roles:
-      - title: Software Devlopment Engineer - 3
+      - title: Software Development Engineer - 3
         duration: March 2024 - Present
-      - title: Software Devlopment Engineer - 2
+      - title: Software Development Engineer - 2
         duration: September 2021 - March 2024
     description:
       - Played primary role in developing end-to-end protobuf based data-platform for warehousing and streaming use cases.
@@ -64,7 +64,7 @@ work_experiences:
       - Played important role in rewamping data-platform services which included rewriting services in more efficient languages, replacing costlier components with cost-efficient components, architectural changes, etc.
   - company: Razorpay
     roles:
-      - title: Software Devlopment Engineer
+      - title: Software Development Engineer
         duration: June 2020 - September 2021
     description:
       - Was part of Transaction Risk Team.
