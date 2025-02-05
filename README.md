@@ -12,3 +12,4 @@ just clean server
 - [ ] minify generated html
 - [ ] Adding tags in different places, like `golang` in project descriptions where `go` was used.
 - [ ] Integrate dependabot.
+- [ ] [Lighthouse score] Avoid layout shift.
