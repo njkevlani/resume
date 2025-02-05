@@ -27,7 +27,7 @@ jobs:
       - uses: extractions/setup-just@v2
       - uses: actions/setup-go@v5
         with:
-          go-version: '1.22.5'
+          go-version-file: go.mod
       - name: Install html2pdf
         run: |
           wget https://github.com/ilaborie/html2pdf/releases/download/v0.8.1/html2pdf-x86_64-unknown-linux-gnu.tar.xz
