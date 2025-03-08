@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: current
       - name: setup-stylelint
-        run: npm install stylelint stylelint-config-standard @stylistic/stylelint-plugin -g
+        run: npm install stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss -g
       - name: stylelint 
         run: just check-lint-css
 
