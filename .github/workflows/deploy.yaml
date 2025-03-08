@@ -31,6 +31,8 @@ jobs:
           version: v1.60
       - name: stylelint 
         uses: actions-hub/stylelint@master
+        env:
+          PATTERN: "**/*.css"
 
   build:
     runs-on: ubuntu-latest
