@@ -1,5 +1,5 @@
 * {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     color: #40484f;
 }
 
@@ -132,7 +132,7 @@ ol#award-list {
 
 .institute-name::before,
 .award-institute::before {
-    content: "| ";
+    content: '| ';
 }
 
 .course-name {

@@ -6,6 +6,7 @@
 		"stylelint-config-standard"
 	],
   "rules": {
-    "@stylistic/indentation": 4
+    "@stylistic/indentation": 4,
+    "@stylistic/string-quotes": "single"
   }
 }
