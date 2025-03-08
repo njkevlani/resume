@@ -15,8 +15,13 @@ server: build
 check-typo:
 	typos
 
-check-lint:
+check-lint-go:
 	golangci-lint run
 	stylelint --configBasedir=/usr/lib/node_modules "**/*.css"
+
+check-lint-css:
+	stylelint --configBasedir=/usr/lib/node_modules "**/*.css"
+
+check-lint: check-lint-go check-lint-css
 
 check: check-typo check-lint

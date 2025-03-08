@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
@@ -29,10 +30,14 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.60
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: current
+      - name: setup-stylelint
+        run: npm install stylelint @stylistic/stylelint-plugin -g
       - name: stylelint 
-        uses: actions-hub/stylelint@master
-        env:
-          PATTERN: "**/*.css"
+        run: just check-lint-css
 
   build:
     runs-on: ubuntu-latest
