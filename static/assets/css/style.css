@@ -144,15 +144,15 @@ ol#award-list {
 }
 
 @media print {
-  #resume {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+    #resume {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-  @page {
-    margin: 1cm 1.4cm;
-  }
+    @page {
+        margin: 1cm 1.4cm;
+    }
 }
 
 /* For smaller */
