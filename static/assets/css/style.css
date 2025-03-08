@@ -55,7 +55,7 @@ ol.tags {
 ol.tags > li {
     display: inline-block;
     margin: 2px 2px 2px 0;
-    padding: 5px 5px 5px;
+    padding: 5px;
     color: #3e6d8e;
     background-color: #dfeaf1;
     border: 0 solid #dfeaf1;
@@ -130,8 +130,8 @@ ol#award-list {
     padding: 0;
 }
 
-.institute-name:before,
-.award-institute:before {
+.institute-name::before,
+.award-institute::before {
     content: "| ";
 }
 
@@ -149,6 +149,7 @@ ol#award-list {
     margin: 0;
     padding: 0;
   }
+
   @page {
     margin: 1cm 1.4cm;
   }
