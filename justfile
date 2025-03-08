@@ -17,6 +17,6 @@ check-typo:
 
 check-lint:
 	golangci-lint run
-	npx stylelint "**/*.css"
+	stylelint "**/*.css"
 
 check: check-typo check-lint
