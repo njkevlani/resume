@@ -17,6 +17,6 @@ check-typo:
 
 check-lint:
 	golangci-lint run
-	stylelint "**/*.css"
+	stylelint --configBasedir=/usr/lib/node_modules "**/*.css"
 
 check: check-typo check-lint
