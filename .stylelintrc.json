@@ -7,6 +7,10 @@
 	],
   "rules": {
     "@stylistic/indentation": 4,
-    "@stylistic/string-quotes": "single"
+    "@stylistic/max-empty-lines": 2,
+    "@stylistic/string-quotes": "single",
+    "@stylistic/no-extra-semicolons": true,
+    "@stylistic/no-eol-whitespace": true,
+    "@stylistic/no-empty-first-line": true
   }
 }
