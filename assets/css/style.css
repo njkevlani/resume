@@ -1,5 +1,5 @@
 * {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     color: #40484f;
 }
 
@@ -55,7 +55,7 @@ ol.tags {
 ol.tags > li {
     display: inline-block;
     margin: 2px 7px 2px 0;
-    padding: 5px 5px 5px;
+    padding: 5px;
     color: #3e6d8e;
     background-color: #dfeaf1;
     border: 0 solid #dfeaf1;
@@ -130,9 +130,9 @@ ol#award-list {
     padding: 0;
 }
 
-.institute-name:before,
-.award-institute:before {
-    content: "| ";
+.institute-name::before,
+.award-institute::before {
+    content: '| ';
 }
 
 .course-name {
@@ -144,14 +144,15 @@ ol#award-list {
 }
 
 @media print {
-  #resume {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  @page {
-    margin: 1cm 1.4cm;
-  }
+    #resume {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    @page {
+        margin: 1cm 1.4cm;
+    }
 }
 
 /* For smaller */
