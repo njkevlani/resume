@@ -8,5 +8,10 @@ build:
 server:
 	hugo server --minify
 
-check-typo:
+lint:
 	typos
+	yamllint .
+	stylelint "**/*.css"
+
+lint-ci:
+	stylelint "**/*.css"
