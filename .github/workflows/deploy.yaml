@@ -41,6 +41,8 @@ jobs:
       - name: stylelint 
         run: just check-lint-css
 
+      - uses: ibiqlik/action-yamllint@v3
+
   build:
     runs-on: ubuntu-latest
     steps:

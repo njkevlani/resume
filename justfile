@@ -21,6 +21,9 @@ check-lint-go:
 check-lint-css:
 	stylelint "**/*.css"
 
-check-lint: check-lint-go check-lint-css
+check-lint-yaml:
+	yamllint .
+
+check-lint: check-lint-go check-lint-css check-lint-yaml
 
 check: check-typo check-lint
