@@ -12,3 +12,6 @@ lint:
 	typos
 	yamllint .
 	stylelint "**/*.css"
+
+lint-ci:
+	stylelint "**/*.css"
