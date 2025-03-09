@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Nilesh Kevlani's Resume" />
+    <title>Nilesh Kevlani | Resume</title>
+    {{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">
+  </head>
+
+  <body>
+    <div id="resume">
+      <!-- Name section - Name, title, location, links -->
+      <div id="name-section">
+        <div id="name">{{ .Params.Name }}</div>
+        <div id="title">{{ .Params.Title }}</div>
+        <div id="location">
+          <span class="svg-icon">
+            <img src="assets/icons/location.svg" alt="link-icon" />
+          </span>
+
+          {{ .Params.Location }}
+        </div>
+        <div id="links">
+          <ol class="links">
+            {{ range $link := .Params.Links }}
+            <li>
+              <a href="{{ $link.HREF }}">
+                <span class="svg-icon">
+                  <img src="{{ $link.IconLocation }}" alt="link-icon" />
+                </span>
+                {{- $link.Content }}
+              </a>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Skills section -->
+      <div id="skills-section" class="section">
+        <div class="section-title">
+          <span>SKILLS</span>
+        </div>
+        <div class="section-content">
+          <ol class="tags">
+            {{ range $skill := .Params.Skills }}
+            <li>
+              {{ $skill.Content -}}
+              <span class="svg-icon">
+                <img
+                  src="assets/icons/score-{{ $skill.Score }}.svg"
+                  alt="score"
+                />
+              </span>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Work Experience section -->
+      <div id="work-experience-section" class="section">
+        <div class="section-title">
+          <span>WORK EXPERIENCE</span>
+        </div>
+
+        <div class="section-content">
+          <ol id="work-experience-list">
+            {{ range $workExperience := .Params.WorkExperiences }}
+            <li class="company-details">
+              <div class="company-name">{{ $workExperience.Company }}</div>
+              {{ range $role := $workExperience.Roles }}
+              <div class="role">
+                <span>{{ $role.Title }}</span>
+                <span class="rfloat">{{ $role.Duration }}</span>
+              </div>
+              {{ end }}
+
+              <ul class="work-description">
+                {{ range $description := $workExperience.Description }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Education section -->
+      <div id="education-section" class="section">
+        <div class="section-title">
+          <span>EDUCATION</span>
+        </div>
+        <div class="section-content">
+          <ol id="education-list">
+            {{ range $educationItem := .Params.EducationItems }}
+            <li class="education-details">
+              <span class="course-name">{{ $educationItem.Course }}</span>
+              <span class="institute-name">{{ $educationItem.Institute }}</span>
+              <span class="svg-icon">
+                <img src="assets/icons/location.svg" alt="link-icon" />
+              </span>
+              <span>{{ $educationItem.Location }}</span>
+              <span class="rfloat">
+                <span class="font-bolder">{{ $educationItem.Score }}</span>
+                &nbsp;
+                <span>{{ $educationItem.Duration }}</span>
+              </span>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Open Source Software Contributions section -->
+      <div id="oss-contriution-section" class="section">
+        <div class="section-title">
+          <span>OPEN SOURCE CONTRIBUTIONS</span>
+        </div>
+
+        <div class="section-content">
+          <ul>
+            {{ range $ossContribution := .Params.OSSContributions }}
+            <li class="oss-details">{{ . | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Languages section -->
+      <div id="languages-section" class="section">
+        <div class="section-title">
+          <span>LANGUAGES</span>
+        </div>
+
+        <div class="section-content">
+          <ol class="tags">
+            {{ range $language := .Params.Languages }}
+            <li>
+              {{ $language.Content -}}
+              <span class="svg-icon">
+                <img
+                  src="assets/icons/score-{{ $language.Score }}.svg"
+                  alt="score"
+                />
+              </span>
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+
+      <!-- Interests section -->
+      <div id="interests-section" class="section">
+        <div class="section-title">
+          <span>INTERESTS</span>
+        </div>
+        <div class="section-content">
+          <ol class="tags">
+            {{ range $interest := .Params.Interests }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

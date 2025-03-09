@@ -1,16 +1,12 @@
 clean:
-	rm -rf build
+	rm -rf public
 
 build:
-	go run main.go
-	mkdir build/pdf -p
-	mv index.html build/
-	cp -r static/* build/
-	html2pdf --background --paper A4 build/index.html -o Nilesh_Kevlani.pdf
-	mv Nilesh_Kevlani.pdf build/pdf/
+	hugo --minify
+	html2pdf --background --paper A4 public/index.html -o public/pdf/Nilesh_Kevlani.pdf
 
-server: build
-	python -m http.server --directory build
+server:
+	hugo server --minify
 
 check-typo:
 	typos

@@ -1,0 +1,4 @@
+baseURL = 'https://njkevlani.dev/resume/'
+languageCode = 'en-us'
+title = 'Nilesh Kevlani | Resume'
+disableKinds = ['taxonomy', 'taxonomyTerm', 'category', 'sitemap', 'RSS', '404',]
