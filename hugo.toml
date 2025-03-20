@@ -1,4 +1,4 @@
 relativeURLs = true
 languageCode = 'en-us'
 title = 'Nilesh Kevlani | Resume'
-disableKinds = ['taxonomy', 'taxonomyTerm', 'category', 'sitemap', 'RSS', '404',]
+disableKinds = ['taxonomy', 'sitemap', 'RSS', '404',]
