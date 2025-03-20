@@ -73,10 +73,10 @@
             <li class="company-details">
               <div class="company-name">{{ $workExperience.Company }}</div>
               {{ range $role := $workExperience.Roles }}
-              <div class="role">
-                <span>{{ $role.Title }}</span>
-                <span class="rfloat">{{ $role.Duration }}</span>
-              </div>
+                <div class="role grid-2-columns">
+                  <span>{{ $role.Title }}</span>
+                  <span class="right-aligned">{{ $role.Duration }}</span>
+                </div>
               {{ end }}
 
               <ul class="work-description">
@@ -99,17 +99,24 @@
           <ol id="education-list">
             {{ range $educationItem := .Params.EducationItems }}
             <li class="education-details">
-              <span class="course-name">{{ $educationItem.Course }}</span>
-              <span class="institute-name">{{ $educationItem.Institute }}</span>
-              <span class="svg-icon">
-                <img src="assets/icons/location.svg" alt="link-icon" />
-              </span>
-              <span>{{ $educationItem.Location }}</span>
-              <span class="rfloat">
-                <span class="font-bolder">{{ $educationItem.Score }}</span>
-                &nbsp;
-                <span>{{ $educationItem.Duration }}</span>
-              </span>
+              <div class="grid-2-columns">
+                <div>
+                  <span class="course-name">{{ $educationItem.Course }}</span>
+                  <span class="institute-name">{{ $educationItem.Institute }}</span>
+                  <span class="svg-icon">
+                    <img src="assets/icons/location.svg" alt="link-icon" />
+                  </span>
+                  <span>{{ $educationItem.Location }}</span>
+                </div>
+
+                <div class="right-aligned">
+                  <span>
+                    <span class="font-bolder">{{ $educationItem.Score }}</span>
+                    &nbsp;
+                    <span>{{ $educationItem.Duration }}</span>
+                  </span>
+                </div>
+              </div>
             </li>
             {{ end }}
           </ol>

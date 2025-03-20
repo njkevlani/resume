@@ -108,10 +108,6 @@ ul.work-description > li {
     margin-top: 0.3em;
 }
 
-.rfloat {
-    float: right;
-}
-
 .role {
     font-weight: bolder;
     margin-top: 0.2em;
@@ -142,19 +138,31 @@ ol#award-list {
     font-weight: bolder;
 }
 
+.grid-2-columns {
+    display: grid;
+}
+
+#work-experience-list .grid-2-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+#education-list .grid-2-columns {
+    grid-template-columns: 7fr 3fr;
+}
+
+.right-aligned {
+    text-align: right;
+}
+
 @media print {
     #resume {
         width: 100%;
         margin: 0;
         padding: 0;
     }
-
-    @page {
-        margin: 1cm 1.4cm;
-    }
 }
 
-/* For smaller */
+/* For smaller screens */
 @media (width <= 900px) {
     #resume {
         width: 100%;
@@ -163,8 +171,16 @@ ol#award-list {
 }
 
 /* For mobile screens */
-@media (width <= 900px) {
-    .rfloat {
-        float: none;
+@media (width <= 710px) {
+    #work-experience-list .grid-2-columns {
+        grid-template-columns: 1fr;
+    }
+
+    #education-list .grid-2-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .right-aligned {
+        text-align: left;
     }
 }
