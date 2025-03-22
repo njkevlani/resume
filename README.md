@@ -13,4 +13,4 @@ just clean server
 - [ ] [Lighthouse score] Avoid layout shift.
 
 ## Credit
--  https://fonts.google.com for fonts.
+- https://fonts.google.com/icons for icons.
