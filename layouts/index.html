@@ -75,7 +75,14 @@
               {{ range $role := $workExperience.Roles }}
                 <div class="role grid-2-columns">
                   <span>{{ $role.Title }}</span>
-                  <span class="right-aligned">{{ $role.Duration }}</span>
+                  <div class="right-aligned">
+                    <span class="svg-icon">
+                      <img src="assets/icons/calendar.svg" alt="link-icon" />
+                    </span>
+                    <span>
+                      {{ $role.Duration }}
+                    </span>
+                </div>
                 </div>
               {{ end }}
 
@@ -113,7 +120,14 @@
                   <span>
                     <span class="font-bolder">{{ $educationItem.Score }}</span>
                     &nbsp;
-                    <span>{{ $educationItem.Duration }}</span>
+                    <span>
+                      <span class="svg-icon">
+                        <img src="assets/icons/calendar.svg" alt="link-icon" />
+                      </span>
+                      <span>
+                        {{ $educationItem.Duration }}
+                      </span>
+                    </span>
                   </span>
                 </div>
               </div>
