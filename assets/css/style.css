@@ -154,6 +154,10 @@ ol#award-list {
     text-align: right;
 }
 
+.page-break {
+    break-after: page;
+}
+
 @media print {
     #resume {
         width: 100%;
