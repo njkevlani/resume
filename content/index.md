@@ -61,7 +61,7 @@ params:
           Duration: September 2021 - March 2024
       DescriptionMarkdown: |
         - Played primary role in data-platform's protobuf journey.
-          - Lead and mentored 5 engineers for the different projects related to protobuf adoption.
+          - Mentored and lead 5 engineers for the different projects related to protobuf adoption.
           - Ideated and developed tooling for migrating and validating data from JSON to protobuf.
           - Ideated and platformized systems for handling protobuf data. One of the big technical achievement in this was, systems were able to handle new protobuf contracts without any deployments.
           - Coordinated with 10+ other teams for migrating their use cases from JSON to protobuf.
