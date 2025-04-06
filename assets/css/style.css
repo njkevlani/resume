@@ -96,16 +96,12 @@ ol.links li {
     margin-top: 0.5em;
 }
 
-div.oss-details li:not(:first-child) {
+div.work-description li, div.oss-details li:not(:first-child) {
     margin-top: 0.3em;
 }
 
 div.work-description ul {
     list-style: square;
-}
-
-div.work-description li {
-    margin-top: 0.3em;
 }
 
 .role {
