@@ -104,6 +104,11 @@ div.work-description ul {
     list-style: square;
 }
 
+/* Style for 2nd level of indent for lists */
+div.work-description ul ul {
+    list-style: circle;
+}
+
 .role {
     font-weight: bolder;
     margin-top: 0.2em;
