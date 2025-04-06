@@ -59,7 +59,7 @@ params:
           Duration: March 2024 - Present
         - Title: Software Development Engineer - 2
           Duration: September 2021 - March 2024
-      Description:
+      DescriptionMarkdown: |
         - Played primary role in developing end-to-end protobuf based data-platform for warehousing and streaming use cases.
         - Played primary role in planning, developing tooling and moving data from JSON to Protobuf format.
         - Ideated and implemented multiple solutions which greately improved user experience for data-platform users.
@@ -68,7 +68,7 @@ params:
       Roles:
         - Title: Software Development Engineer
           Duration: June 2020 - September 2021
-      Description:
+      DescriptionMarkdown: |
         - Was part of Transaction Risk Team.
         - Worked on external vender integrations, customer integrations and features requirements.
         - Worked on systems serving end-customer, merchants, ops team & other backend systems.
@@ -76,7 +76,7 @@ params:
       Roles:
         - Title: Software Engineer
           Duration: September 2018 - June 2020
-      Description:
+      DescriptionMarkdown: |
         - Worked on entire backend system for the org.
         - Developed Recommendation Engine that matches Jobs with Candidate and vice versa.
         - Developed Email Scheduler.
@@ -97,15 +97,15 @@ params:
       Location: Bhavnagar
       Score: 85.66 %
       Duration: 2010 - 2012
-  OSSContributions:
-    - <a target="_blank" href="https://github.com/njkevlani/hst">hst</a> - A simple <a target="_blank" href="https://gohugo.io">hugo</a> theme.
-    - <a target="_blank" href="https://github.com/njkevlani/driveload">Driveload</a> - A GitHub action that downloads file from the Internet and uploads it to Google Drive.
-    - <a target="_blank" href="https://github.com/njkevlani/tabbit">Tabbit</a> - A simple reddit web client with vim like keybindings.
-    - <a target="_blank" href="https://github.com/scikit-learn/scikit-learn/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://scikit-learn.org/">scikit-learn</a>.
-    - <a target="_blank" href="https://github.com/microsoft/vscode/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://code.visualstudio.com/">Visual Studio Code</a>.
-    - <a target="_blank" href="https://github.com/mattermost/mmctl/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://mattermost.com/">Mattermost</a> CLI.
-    - <a target="_blank" href="https://gitlab.com/gitlab-org/gitaly/-/merge_requests?scope=all&state=all&author_username=njkevlani">Contibutions</a> in <a href="https://gitlab.com/">GitLab</a>'s Gitaly.
-    - <a target="_blank" href="https://github.com/shanalikhan/code-settings-sync/pulls?q=is%3Apr+author%3Anjkevlani">Contibutions</a> in <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Code Settings Sync</a> Plugin.
+  OSSContributionsMarkdown: |
+    - [hst](https://github.com/njkevlani/hst) - A simple [hugo](https://gohugo.io) theme. 
+    - [Driveload](https://github.com/njkevlani/driveload) - A GitHub action that downloads file from the Internet and uploads it to Google Drive.
+    - [Tabbit](https://github.com/njkevlani/tabbit) - A simple reddit web client with vim like keybindings.
+    - [Contibutions](https://github.com/scikit-learn/scikit-learn/pulls?q=is%3Apr+author%3Anjkevlani) in [scikit-learn](https://scikit-learn.org/).
+    - [Contibutions](https://github.com/microsoft/vscode/pulls?q=is%3Apr+author%3Anjkevlani) in [Visual Studio Code](https://code.visualstudio.com/).
+    - [Contibutions](https://github.com/mattermost/mmctl/pulls?q=is%3Apr+author%3Anjkevlani) in [Mattermost](https://mattermost.com/) CLI.
+    - [Contibutions](https://gitlab.com/gitlab-org/gitaly/-/merge_requests?scope=all&state=all&author_username=njkevlani) in [GitLab](https://gitlab.com/)'s Gitaly.
+    - [Contibutions](https://github.com/shanalikhan/code-settings-sync/pulls?q=is%3Apr+author%3Anjkevlani) in [Code Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) Plugin.
   Languages:
     - Content: English
       Score: 8

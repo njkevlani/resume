@@ -86,11 +86,9 @@
                 </div>
               {{ end }}
 
-              <ul class="work-description">
-                {{ range $description := $workExperience.Description }}
-                <li>{{ . }}</li>
-                {{ end }}
-              </ul>
+              <div class="work-description">
+                {{ $workExperience.DescriptionMarkdown | markdownify }}
+              </div>
             </li>
             {{ end }}
           </ol>
@@ -146,11 +144,9 @@
         </div>
 
         <div class="section-content">
-          <ul>
-            {{ range $ossContribution := .Params.OSSContributions }}
-            <li class="oss-details">{{ . | safeHTML }}</li>
-            {{ end }}
-          </ul>
+          <div class="oss-details">
+            {{ .Params.OSSContributionsMarkdown | markdownify }}
+          </div>
         </div>
       </div>
 

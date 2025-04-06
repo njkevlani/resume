@@ -96,15 +96,15 @@ ol.links li {
     margin-top: 0.5em;
 }
 
-.oss-details:not(:first-child) {
+div.oss-details li:not(:first-child) {
     margin-top: 0.3em;
 }
 
-ul.work-description {
+div.work-description ul {
     list-style: square;
 }
 
-ul.work-description > li {
+div.work-description li {
     margin-top: 0.3em;
 }
 
