@@ -60,18 +60,22 @@ params:
         - Title: Software Development Engineer - 2
           Duration: September 2021 - March 2024
       DescriptionMarkdown: |
-        - Played primary role in developing end-to-end protobuf based data-platform for warehousing and streaming use cases.
-        - Played primary role in planning, developing tooling and moving data from JSON to Protobuf format.
-        - Ideated and implemented multiple solutions which greately improved user experience for data-platform users.
-        - Played important role in rewamping data-platform services which included rewriting services in more efficient languages, replacing costlier components with cost-efficient components, architectural changes, etc.
+        - Played primary role in data-platform's protobuf journey.
+          - Lead and mentored 5 engineers for the different projects related to protobuf adoption.
+          - Ideated and developed tooling for migrating and validating data from JSON to protobuf.
+          - Ideated and platformized systems for handling protobuf data. One of the big technical achievement in this was, systems were able to handle new protobuf contracts without any deployments.
+          - Coordinated with 10+ other teams for migrating their use cases from JSON to protobuf.
+        - Ideated and implemented multiple solutions for moving flows from GitHub+PRs to UI, which greately improved user experience and efficiency for data-platform users.
+        - Played important role in rewamping data-platform services which included rewriting services in more efficient languages, replacing costlier components with cost-efficient components and architectural changes.
     - Company: Razorpay
       Roles:
         - Title: Software Development Engineer
           Duration: June 2020 - September 2021
       DescriptionMarkdown: |
-        - Was part of Transaction Risk Team.
-        - Worked on external vender integrations, customer integrations and features requirements.
-        - Worked on systems serving end-customer, merchants, ops team & other backend systems.
+        - Worked on systems in Transaction Risk Team serving end-customer, merchants, ops team & other backend systems.
+          - Integrated external vendor (MaxMind) APIs for fraud detection.
+          - Worked on APIs which power UI which is used by customer to raise disputes for transactions.
+        - Improved observability of the services by integrating jaeger tracing.
     - Company: TalentXO (Formally CrewKarma)
       Roles:
         - Title: Software Engineer
