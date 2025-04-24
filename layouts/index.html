@@ -49,12 +49,14 @@
             {{ range $skill := .Params.Skills }}
             <li>
               {{ $skill.Content -}}
+              {{ if $skill.Score }}
               <span class="svg-icon">
                 <img
                   src="assets/icons/score-{{ $skill.Score }}.svg"
                   alt="score"
                 />
               </span>
+              {{ end }}
             </li>
             {{ end }}
           </ol>
@@ -159,12 +161,14 @@
             {{ range $language := .Params.Languages }}
             <li>
               {{ $language.Content -}}
+              {{ if $language.Score }}
               <span class="svg-icon">
                 <img
                   src="assets/icons/score-{{ $language.Score }}.svg"
                   alt="score"
                 />
               </span>
+              {{ end }}
             </li>
             {{ end }}
           </ol>
