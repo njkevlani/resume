@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=../resume-schema.json
 params:
   Name: Nilesh Kevlani
   Title: Software Engineer
