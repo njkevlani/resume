@@ -1,0 +1,94 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+required: [params]
+properties:
+  params:
+    type: object
+    required: [Name, Title, Location, Links, Sections]
+    properties:
+      Name:
+        type: string
+      Title:
+        type: string
+      Location:
+        type: string
+      Links:
+        type: array
+        items:
+          type: object
+          required: [IconLocation, Content, HREF]
+          properties:
+            IconLocation: { type: string }
+            Content: { type: string }
+            HREF: { type: string, format: uri }
+
+      Sections:
+        type: array
+        items:
+          oneOf:
+            - properties:
+                Type:
+                  const: ListingSection
+                Title:
+                  type: string
+                Items:
+                  type: array
+                  items:
+                    type: object
+                    required: [Content]
+                    properties:
+                      Content: { type: string }
+                      Score:
+                        type: integer
+                        minimum: 0
+                        maximum: 10
+              required: [Type, Title, Items]
+
+            - properties:
+                Type:
+                  const: WorkExperienceSection
+                WorkExperiences:
+                  type: array
+                  items:
+                    type: object
+                    required: [Company, Roles, DescriptionMarkdown]
+                    properties:
+                      Company: { type: string }
+                      Roles:
+                        type: array
+                        items:
+                          type: object
+                          required: [Title, Duration]
+                          properties:
+                            Title: { type: string }
+                            Duration: { type: string }
+                      DescriptionMarkdown: { type: string }
+              required: [Type, WorkExperiences]
+
+            - properties:
+                Type:
+                  const: EducationSection
+                EducationItems:
+                  type: array
+                  items:
+                    type: object
+                    required: [Course, Institute, Location, Score, Duration]
+                    properties:
+                      Course: { type: string }
+                      Institute: { type: string }
+                      Location: { type: string }
+                      Score: { type: string }
+                      Duration: { type: string }
+              required: [Type, EducationItems]
+
+            - properties:
+                Type:
+                  const: MarkdownSection
+                Title:
+                  type: string
+                Content:
+                  type: string
+              required: [Type, Title, Content]
+
+          discriminator:
+            propertyName: Type
