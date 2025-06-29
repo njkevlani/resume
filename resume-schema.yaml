@@ -1,0 +1,127 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+required: [params]
+additionalProperties: false
+properties:
+  params:
+    type: object
+    required: [Name, Title, Location, Links, Sections]
+    additionalProperties: false
+    properties:
+      Name:
+        type: string
+      Title:
+        type: string
+      Location:
+        type: string
+      Links:
+        type: array
+        items:
+          type: object
+          required: [IconLocation, Content, HREF]
+          additionalProperties: false
+          properties:
+            IconLocation:
+              type: string
+            Content:
+              type: string
+            HREF:
+              type: string
+              format: uri
+
+      Sections:
+        type: array
+        items:
+          oneOf:
+            - properties:
+                Type:
+                  const: ListingSection
+                Title:
+                  type: string
+                Items:
+                  type: array
+                  items:
+                    type: object
+                    required: [Content]
+                    additionalProperties: false
+                    properties:
+                      Content:
+                        type: string
+                      Score:
+                        type: integer
+                        minimum: 0
+                        maximum: 10
+                PageBreakAfter:
+                  type: boolean
+              required: [Type, Title, Items]
+              additionalProperties: false
+
+            - properties:
+                Type:
+                  const: WorkExperienceSection
+                WorkExperiences:
+                  type: array
+                  items:
+                    type: object
+                    required: [Company, Roles, DescriptionMarkdown]
+                    additionalProperties: false
+                    properties:
+                      Company:
+                        type: string
+                      Roles:
+                        type: array
+                        items:
+                          type: object
+                          required: [Title, Duration]
+                          additionalProperties: false
+                          properties:
+                            Title:
+                              type: string
+                            Duration:
+                              type: string
+                      DescriptionMarkdown:
+                        type: string
+                PageBreakAfter:
+                  type: boolean
+              required: [Type, WorkExperiences]
+              additionalProperties: false
+
+            - properties:
+                Type:
+                  const: EducationSection
+                EducationItems:
+                  type: array
+                  items:
+                    type: object
+                    required: [Course, Institute, Location, Score, Duration]
+                    additionalProperties: false
+                    properties:
+                      Course:
+                        type: string
+                      Institute:
+                        type: string
+                      Location:
+                        type: string
+                      Score:
+                        type: string
+                      Duration:
+                        type: string
+                PageBreakAfter:
+                  type: boolean
+              required: [Type, EducationItems]
+              additionalProperties: false
+
+            - properties:
+                Type:
+                  const: MarkdownSection
+                Title:
+                  type: string
+                Content:
+                  type: string
+                PageBreakAfter:
+                  type: boolean
+              required: [Type, Title, Content]
+              additionalProperties: false
+
+          discriminator:
+            propertyName: Type

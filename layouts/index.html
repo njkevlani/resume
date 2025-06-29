@@ -39,155 +39,129 @@
         </div>
       </div>
 
-      <!-- Skills section -->
-      <div id="skills-section" class="section">
-        <div class="section-title">
-          <span>SKILLS</span>
-        </div>
-        <div class="section-content">
-          <ol class="tags">
-            {{ range $skill := .Params.Skills }}
-            <li>
-              {{ $skill.Content -}}
-              {{ if $skill.Score }}
-              <span class="svg-icon">
-                <img
-                  src="assets/icons/score-{{ $skill.Score }}.svg"
-                  alt="score"
-                />
-              </span>
-              {{ end }}
-            </li>
-            {{ end }}
-          </ol>
-        </div>
-      </div>
+      {{ range $section := .Params.Sections }}
 
-      <!-- Work Experience section -->
-      <div id="work-experience-section" class="section">
-        <div class="section-title">
-          <span>WORK EXPERIENCE</span>
-        </div>
-
-        <div class="section-content">
-          <ol id="work-experience-list">
-            {{ range $workExperience := .Params.WorkExperiences }}
-            <li class="company-details">
-              <div class="company-name">{{ $workExperience.Company }}</div>
-              {{ range $role := $workExperience.Roles }}
-                <div class="role grid-2-columns">
-                  <span>{{ $role.Title }}</span>
-                  <div class="right-aligned">
-                    <span class="svg-icon">
-                      <img src="assets/icons/calendar.svg" alt="link-icon" />
-                    </span>
-                    <span>
-                      {{ $role.Duration }}
-                    </span>
-                </div>
-                </div>
-              {{ end }}
-
-              <div class="work-description">
-                {{ $workExperience.DescriptionMarkdown | markdownify }}
-              </div>
-            </li>
-            {{ end }}
-          </ol>
-        </div>
-      </div>
-
-      <!-- Education section -->
-      <div id="education-section" class="section">
-        <div class="section-title">
-          <span>EDUCATION</span>
-        </div>
-        <div class="section-content">
-          <ol id="education-list">
-            {{ range $educationItem := .Params.EducationItems }}
-            <li class="education-details">
-              <div class="grid-2-columns">
-                <div>
-                  <span class="course-name">{{ $educationItem.Course }}</span>
-                  <span class="institute-name">{{ $educationItem.Institute }}</span>
+        {{ if eq $section.Type "ListingSection" }}
+          <div class="listing-section section">
+            <div class="section-title">
+              <span>{{ $section.Title }}</span>
+            </div>
+            <div class="section-content">
+              <ol class="tags">
+                {{ range $item := $section.Items }}
+                <li>
+                  {{ $item.Content -}}
+                  {{ if $item.Score }}
                   <span class="svg-icon">
-                    <img src="assets/icons/location.svg" alt="link-icon" />
+                    <img
+                      src="assets/icons/score-{{ $item.Score }}.svg"
+                      alt="score"
+                    />
                   </span>
-                  <span>{{ $educationItem.Location }}</span>
-                </div>
-
-                <div class="right-aligned">
-                  <span>
-                    <span class="font-bolder">{{ $educationItem.Score }}</span>
-                    &nbsp;
-                    <span>
-                      <span class="svg-icon">
-                        <img src="assets/icons/calendar.svg" alt="link-icon" />
-                      </span>
-                      <span>
-                        {{ $educationItem.Duration }}
-                      </span>
-                    </span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            {{ end }}
-          </ol>
-        </div>
-      </div>
-
-      <!-- Open Source Software Contributions section -->
-      <div id="oss-contriution-section" class="section">
-        <div class="section-title">
-          <span>OPEN SOURCE CONTRIBUTIONS</span>
-        </div>
-
-        <div class="section-content">
-          <div class="oss-details">
-            {{ .Params.OSSContributionsMarkdown | markdownify }}
+                  {{ end }}
+                </li>
+                {{ end }}
+              </ol>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Languages section -->
-      <div id="languages-section" class="section">
-        <div class="section-title">
-          <span>LANGUAGES</span>
-        </div>
+        {{ else if eq $section.Type "MarkdownSection" }}
 
-        <div class="section-content">
-          <ol class="tags">
-            {{ range $language := .Params.Languages }}
-            <li>
-              {{ $language.Content -}}
-              {{ if $language.Score }}
-              <span class="svg-icon">
-                <img
-                  src="assets/icons/score-{{ $language.Score }}.svg"
-                  alt="score"
-                />
-              </span>
-              {{ end }}
-            </li>
-            {{ end }}
-          </ol>
-        </div>
-      </div>
+          <div class="markdown-section section">
+            <div class="section-title">
+              <span>{{ $section.Title }}</span>
+            </div>
 
-      <!-- Interests section -->
-      <div id="interests-section" class="section">
-        <div class="section-title">
-          <span>INTERESTS</span>
-        </div>
-        <div class="section-content">
-          <ol class="tags">
-            {{ range $interest := .Params.Interests }}
-            <li>{{ . }}</li>
-            {{ end }}
-          </ol>
-        </div>
-      </div>
-    </div>
+            <div class="section-content">
+              <div class="oss-details">
+                {{ $section.Content | markdownify }}
+              </div>
+            </div>
+          </div>
+
+        {{ else if eq $section.Type "WorkExperienceSection" }}
+
+          <div id="work-experience-section" class="section">
+            <div class="section-title">
+              <span>WORK EXPERIENCE</span>
+            </div>
+
+            <div class="section-content">
+              <ol id="work-experience-list">
+                {{ range $workExperience := $section.WorkExperiences }}
+                <li class="company-details">
+                  <div class="company-name">{{ $workExperience.Company }}</div>
+                  {{ range $role := $workExperience.Roles }}
+                    <div class="role grid-2-columns">
+                      <span>{{ $role.Title }}</span>
+                      <div class="right-aligned">
+                        <span class="svg-icon">
+                          <img src="assets/icons/calendar.svg" alt="link-icon" />
+                        </span>
+                        <span>
+                          {{ $role.Duration }}
+                        </span>
+                    </div>
+                    </div>
+                  {{ end }}
+
+                  <div class="work-description">
+                    {{ $workExperience.DescriptionMarkdown | markdownify }}
+                  </div>
+                </li>
+                {{ end }}
+              </ol>
+            </div>
+          </div>
+
+        {{ else if eq $section.Type "EducationSection" }}
+          
+          <div id="education-section" class="section">
+            <div class="section-title">
+              <span>EDUCATION</span>
+            </div>
+            <div class="section-content">
+              <ol id="education-list">
+                {{ range $educationItem := $section.EducationItems }}
+                <li class="education-details">
+                  <div class="grid-2-columns">
+                    <div>
+                      <span class="course-name">{{ $educationItem.Course }}</span>
+                      <span class="institute-name">{{ $educationItem.Institute }}</span>
+                      <span class="svg-icon">
+                        <img src="assets/icons/location.svg" alt="link-icon" />
+                      </span>
+                      <span>{{ $educationItem.Location }}</span>
+                    </div>
+
+                    <div class="right-aligned">
+                      <span>
+                        <span class="font-bolder">{{ $educationItem.Score }}</span>
+                        &nbsp;
+                        <span>
+                          <span class="svg-icon">
+                            <img src="assets/icons/calendar.svg" alt="link-icon" />
+                          </span>
+                          <span>
+                            {{ $educationItem.Duration }}
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                {{ end }}
+              </ol>
+            </div>
+          </div>
+
+        {{ end }}
+
+        {{ if .PageBreakAfter }}
+          <div class="page-break"></div>
+        {{ end }}
+
+      {{ end }}
+
   </body>
 </html>
