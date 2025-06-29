@@ -21,9 +21,13 @@ properties:
           required: [IconLocation, Content, HREF]
           additionalProperties: false
           properties:
-            IconLocation: { type: string }
-            Content: { type: string }
-            HREF: { type: string, format: uri }
+            IconLocation:
+              type: string
+            Content:
+              type: string
+            HREF:
+              type: string
+              format: uri
 
       Sections:
         type: array
@@ -41,7 +45,8 @@ properties:
                     required: [Content]
                     additionalProperties: false
                     properties:
-                      Content: { type: string }
+                      Content:
+                        type: string
                       Score:
                         type: integer
                         minimum: 0
@@ -61,7 +66,8 @@ properties:
                     required: [Company, Roles, DescriptionMarkdown]
                     additionalProperties: false
                     properties:
-                      Company: { type: string }
+                      Company:
+                        type: string
                       Roles:
                         type: array
                         items:
@@ -69,9 +75,12 @@ properties:
                           required: [Title, Duration]
                           additionalProperties: false
                           properties:
-                            Title: { type: string }
-                            Duration: { type: string }
-                      DescriptionMarkdown: { type: string }
+                            Title:
+                              type: string
+                            Duration:
+                              type: string
+                      DescriptionMarkdown:
+                        type: string
                 PageBreakAfter:
                   type: boolean
               required: [Type, WorkExperiences]
@@ -87,11 +96,16 @@ properties:
                     required: [Course, Institute, Location, Score, Duration]
                     additionalProperties: false
                     properties:
-                      Course: { type: string }
-                      Institute: { type: string }
-                      Location: { type: string }
-                      Score: { type: string }
-                      Duration: { type: string }
+                      Course:
+                        type: string
+                      Institute:
+                        type: string
+                      Location:
+                        type: string
+                      Score:
+                        type: string
+                      Duration:
+                        type: string
                 PageBreakAfter:
                   type: boolean
               required: [Type, EducationItems]
