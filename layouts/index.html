@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta name="description" content="Nilesh Kevlani's Resume" />
-    <title>Nilesh Kevlani | Resume</title>
+    <title>{{ .Params.Name }} | Resume</title>
     {{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}">
   </head>
